@@ -6,7 +6,7 @@ Complessità: O(V * logV) dove V è il numero di fette del mandarino più grande
 Idea:
  - Definiamo un predicato check(m) che ci dica [true/false] se è possibile ottenere joy >= m
     (i.e. se è possibile dare ad ogni bambino un pezzo di mandarino di >= m fette)
- - Cerchiamo il massimo x tale che check(m) = true, essendo check monotòna possiamo cercarlo per
+ - Cerchiamo il massimo m tale che check(m) = true, essendo check monotòna possiamo cercarlo per
     bisezione su [1..V]  ==> logV * complessità(check)
  - Calcolare check(m) in maniera efficiente (lineare):
     * Considero il vettore delle frequenze b[i] = quanti mandarini con i fette
