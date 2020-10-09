@@ -8,7 +8,7 @@ Idea:
   - Le posizioni indicano il fatto che il mandarino con più fette ne ha j e il numero di mandarini con
     fette in [i..j] è >=k
   - L'obbiettivo è trovare il massimo i, quindi ad ogni passo divido a metà tutti i mandarini con j fette
-    (incrementando il numeri di mandarini in [i..j] di a[j]) e incremento i fintanto che la somma è >= k
+    (incrementando il numeri di mandarini in [i..j-1] di a[j]) e incremento i fintanto che la somma è >= k
   - Al passo successivo ripeto con j-1 e così via
   - Mi fermo quando 2*i > j in quanto dividendo i mandarini di j fette non aumenta il totale
 */
