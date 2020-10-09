@@ -42,7 +42,7 @@ int main()
     
     int i=0, j=v-1;
     tot = n;
-    while(i<j and tot<k) {
+    while(i<j and tot<k) { // Divido finché non ho abbastanza mandarini
         int x = j/2;
         a[x] += a[j];
         a[j-x] += a[j];
@@ -50,11 +50,11 @@ int main()
         a[j] = 0;
         --j;
     }
-    while(i<j and tot-a[i]>=k) {
+    while(i<j and tot-a[i]>=k) { // Incremento finché ho troppi mandarini
         tot -= a[i++];
     }
 
-    while(2*i<=j) {
+    while(2*i<=j) { // Main loop: divido mandarini di j fette e incremento i mantenendo tot>=k
         int x = j/2;
         a[x] += a[j];
         a[j-x] += a[j];
