@@ -1,3 +1,19 @@
+/*
+Testo: https://open.kattis.com/problems/bitsequalizer
+Tecnica: Ad hoc, osservazione
+Complessità: O(|S|)
+
+Idea:
+ - Si osserva che le posizioni "giuste" (00, 11) non ha senso toccarle.
+    Le posizioni 10 possono essere scambiate con le 01.
+    Se dovessero avanzare posizioni 10 possono essere scambiate con ?0.
+    Se dovessero avanzare posizioni 01 possono essere scambiate con ?1.
+    Se dovessero ancora avanzare posizioni 10 la soluzione non esiste.
+    Se dovessero ancora avanzare 01, ?0, ?1 possono essere trasformate in 11, 00, 11.
+ - Si contano quante mosse ricadono nei casi sopra
+
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
 

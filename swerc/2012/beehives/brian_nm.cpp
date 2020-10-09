@@ -1,3 +1,15 @@
+/*
+Testo: https://open.kattis.com/problems/beehives2
+Tecnica: BFS
+Complessità: O(n * (n+m))
+
+Idea:
+ - Il problema può essere formulato come la ricerca del ciclo più corto in un grafo
+ - Fate partire una BFS da ogni vertice e appena si chiude un ciclo salvate la distanza minima globale
+ - Complessità data da n BFS di costo O(n+m) ognuna
+ 
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
 

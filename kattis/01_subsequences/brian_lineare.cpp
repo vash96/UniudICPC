@@ -1,3 +1,15 @@
+/*
+Testo: https://open.kattis.com/problems/sequences
+Tecnica: Programmazione dinamica, combinatoria
+Complessità: O(|S|)
+
+Idea:
+ - Per ogni posizione si sommano tutte le inversioni che produce quella posizione
+    tra tutte le combinazioni di '?'
+ - Il calcolo può essere svolto manipolando una sommatoria e pre-calcolando in DP alcuni valori
+ -  .... da finire
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
 
