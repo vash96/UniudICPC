@@ -1,3 +1,20 @@
+/*
+Testo: https://codeforces.com/contest/748/problem/E
+Tecnica: binary search
+Complessità: O(V * logV) dove V è il numero di fette del mandarino più grande
+
+Idea:
+ - Definiamo un predicato check(m) che ci dica [true/false] se è possibile ottenere joy >= m
+    (i.e. se è possibile dare ad ogni bambino un pezzo di mandarino di >= m fette)
+ - Cerchiamo il massimo x tale che check(m) = true, essendo check monotòna possiamo cercarlo per
+    bisezione su [1..V]  ==> logV * complessità(check)
+ - Calcolare check(m) in maniera efficiente (lineare):
+    * Considero il vettore delle frequenze b[i] = quanti mandarini con i fette
+    * Scorro dal più grande al più piccolo e divido a metà tutti i mandarini di una fissata grandezza
+    * Tengo il conto "ans" di quanti mandarini hanno >= m fette e aggiorno il conto ad ogni grandezza
+    * check(m)=true sse ans>=m
+*/
+
 #include<bits/stdc++.h>
 using namespace std;
 typedef long long ll;
