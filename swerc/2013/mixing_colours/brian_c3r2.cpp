@@ -1,3 +1,24 @@
+/*
+Testo: https://open.kattis.com/problems/mixingcolours
+Tecnica: Programmazione Dinamica, Parsing, approssimazione float
+Complessità: O(C^3 * R^2)
+
+Idea:
+ - ogni regola del tipo A+B=C può essere rappresentata tramite due
+    produzioni C -> AB e C -> BA di una grammatica CF.
+ - Il problema diventa quindi determinare il parsing "più probabile"
+    della parola in input (parola dove le lettere sono colori)
+ - Definisco dp[i,j,k] come la probabilità del parsing più probabile
+    per derivare la sottostringa [i..j] a partire dal colore k. Per il calcolo:
+        * Fisso una regola di produzione k -> ab
+        * ab deve derivare [i..j], quindi devo trovare x tale che a derivi [i..x]
+          e b derivi [x+1..j]
+        * Cerco la regola e la posizione x che massimizzi la probabilità dp[i,x,a]*dp[x+1,j,b]
+ - Per evitare problemi di approssimazione (e tante bestemmie) sfruttare il fatto che
+    trovare max(p * q) è equivalente a trovare max(log(p) + log(q))
+
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -26,7 +47,7 @@ void solve()
         cin >> color;
         while(color != "END") {
             cin >> cc;
-            cer[i][umap[color]] = log(cc);
+            cer[i][umap[color]] = log(cc); // Using log
             cin >> color;
         }
     }
@@ -40,14 +61,14 @@ void solve()
         }
     }
     
-    // Base
+    // Base case
     for(int i=0; i<C; ++i) { // Probability( word[i] is derived from color k is its certainty )
         for(int k=0; k<ncol; ++k) {
             dp[i][i][k] = cer[i][k];
         }
     }
     
-    // Induction
+    // Inductive step
     for(int len=2; len<=C; ++len) { // For each length
         for(int i=0, j; i<=C-len; ++i) { // For each starting point
             j = i+len-1;
