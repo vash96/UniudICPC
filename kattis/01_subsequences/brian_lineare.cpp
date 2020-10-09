@@ -7,7 +7,7 @@ Idea:
  - Per ogni posizione si sommano tutte le inversioni che produce quella posizione
     tra tutte le combinazioni di '?'
  - Il calcolo può essere svolto manipolando una sommatoria e pre-calcolando in DP alcuni valori
- -  .... da finire
+ -  .... da finire 
 */
 
 #include <bits/stdc++.h>
