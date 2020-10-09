@@ -1,6 +1,6 @@
 /*
 Testo: https://codeforces.com/contest/748/problem/E
-Tecnica: two pointers
+Tecnica: two pointers (consiglio https://training.olinfo.it/#/task/spiedini/statement)
 Complessità: O(V) dove V è il numero di fette del mandarino più grande
 
 Idea:

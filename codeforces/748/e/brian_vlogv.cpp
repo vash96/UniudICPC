@@ -1,6 +1,6 @@
 /*
 Testo: https://codeforces.com/contest/748/problem/E
-Tecnica: binary search
+Tecnica: binary search (consiglio https://training.olinfo.it/#/task/rice/statement)
 Complessità: O(V * logV) dove V è il numero di fette del mandarino più grande
 
 Idea:

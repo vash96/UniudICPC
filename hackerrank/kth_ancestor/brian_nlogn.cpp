@@ -1,6 +1,7 @@
 /*
 Testo: https://www.hackerrank.com/challenges/kth-ancestor/problem
 Tecnica: Binary lifting/jump pointers, Programmazione dinamica
+            (consiglio https://training.olinfo.it/#/task/trasporti/statement)
 Complessità: O((Q+N) * logN)
 
 Idea:
