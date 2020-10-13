@@ -9,7 +9,7 @@
     facile notare che, sotto questa ipotesi, la lunghezza del ciclo minimo corrisponderà al minimo tra le sommme di prima.
     (basta ragionare per assurdo per verificarlo)
 
-    dall'implementazione di seguito abbiamo una complessità O(N^2+M)
+    dall'implementazione di seguito abbiamo una complessità O(N(N+M))
 **/
 
 #include<bits/stdc++.h>
@@ -35,7 +35,7 @@ int main(){
     int sol = 2*MAXN;
 
     for(int root = 0; root < n; root++){        //per ogni root possibile calcolo d[root][..]
-        //il ciclo mi costa O(N) essendo che ogni nodo entra nella coda al più 2 volte
+        //il ciclo mi costa O(N+M) essendo che ogni nodo entra nella coda al più 2 volte
         queue<II> Q;        //queue with <<node, parent>, distance>
 
         Q.push(II(ii(root, -1), 0));
