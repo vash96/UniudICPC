@@ -1,3 +1,17 @@
+/*
+Testo: https://open.kattis.com/problems/vivoparc
+Tecnica: Backtracking
+Complessità: boh
+
+Idea:
+  - I limiti sono abbastanza bassi e possiamo procedere per backtracking
+  - Ad ogni passo decidiamo il colore da assegnare ad un nodo, ricorrendo sui successivi
+  - Scegliamo un colore da provare tra i soli colori disponibili per quel nodo
+  - Se troviamo una soluzione return true e ci fermiamo
+
+*/
+
+
 #include <bits/stdc++.h>
 using namespace std;
 
