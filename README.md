@@ -1,8 +1,9 @@
 # UniudICPC
-Soluzioni di problemi risolti durante gli allenamenti per le ACM-ICPC
+Training hub for the [SWERC](https://swerc.eu) competition.\\
 
-# Organizzazione
-Cercate di rispettare la gerarchia definita da `sito/problema/risolutore_complessità`.  
-Per `codeforces` il nome è definito da `contest/lettera`.  
-La cartella `swerc` contiene i problemi risolti delle edizioni delle ICPC della nostra regione.  
-All'inizio del sorgente inserite il link di riferimento al testo del problema e spiegate brevemente le idee risolutive e la complessità dell'algoritmo. Se in rete ci sono spunti utili sulle tecniche usate linkatele.
+# Organization
+Directory hierarchy is `site/problemname/solver_complexity`.
+For `codeforces` the problem name is defined as `contest/letter`.
+`swerc` directory contains solved problems to past editions of the competition.
+`hackerrank` directory contains some problems and a complete list of solutions for [HackerRank Interview Preparation Kit](https://www.hackerrank.com/interview/interview-preparation-kit).
+Each sourcecode has a link to the problem text and a brief description of the solution and its complexity.
