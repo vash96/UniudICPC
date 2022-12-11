@@ -83,43 +83,37 @@ int main()
         }
         rgt[i] = curr;
     }
+
+    // Test Coprime(l, i, r) dell'idea sopra
+    const auto Coprime = [&lft, &rgt](int l, int i, int r) {
+        return lft[i] < l and r < rgt[i];
+    };
     
     // Risolvo ricorsivamente: -1 indica che la soluzione non esiste, -2 indica il sottoalbero vuoto
     function<int(int, int)> solve;
     vector<int> par(N, 0);
-    solve = [&lft, &rgt, &par, &solve](int l, int r) -> int {
+    solve = [&par, &Coprime, &solve](int l, int r) -> int {
         int n = r-l+1;
-        if(n <= 0)
+        if(n <= 0) // Albero vuoto
             return -2;
-        if(n == 1)
+        if(n == 1) // Albero con un solo nodo
             return l;
-        for(int i=0; i<n; ++i) {
-            if(l+i > r-i)
+        for(int i=0; i<n; ++i) { // Scansiono
+            if(l+i > r-i) // Se non ho trovato la radice prima della meta', allora non esiste
                 return -1;
             // left
             int root = l+i;
-            if(lft[root] < l and r < rgt[root]) { // Test Coprime(l, root, r) dell'idea sopra
-                int L = solve(l, root-1);
-                int R = solve(root+1, r);
-                if(L == -1 or R == -1)
-                    return -1;
-                if(L >= 0)
-                    par[L] = root+1;
-                if(R >= 0)
-                    par[R] = root+1;
-                return root;
-            }
+            if(not Coprime(l, root, r)) // Se vicino al bordo sinistro non trovo...
+                root = r-i;             // ...provo vicino al bordo destro
             
-            // right
-            root = r-i;
-            if(lft[root] < l and r < rgt[root]) {
-                int L = solve(l, root-1);
-                int R = solve(root+1, r);
-                if(L == -1 or R == -1)
+            if(Coprime(l, root, r)) { // Se la radice (qualunque essa sia) e' buona, ricorro
+                int L = solve(l, root-1); // Ricorro a sx
+                int R = solve(root+1, r); // Ricorro a dx
+                if(L == -1 or R == -1) // Se la sol non esiste in uno dei due rami, allora non esiste
                     return -1;
-                if(L >= 0)
-                    par[L] = root+1;
-                if(R >= 0)
+                if(L >= 0) // Se a sx l'albero non e' vuoto, L rappresenta l'indice della radice
+                    par[L] = root+1; // Radice 1-based
+                if(R >= 0) // Stessa cosa del caso sx
                     par[R] = root+1;
                 return root;
             }
