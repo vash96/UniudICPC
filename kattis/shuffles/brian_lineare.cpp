@@ -35,5 +35,8 @@ int main()
     for(int i=0; i<N-1; ++i)
         ans += where_is[i] > where_is[i+1];
     
+    // __builtin_clz(n) e' una funzione standard di gcc che calcola
+    // il numero di 'leading zeros' di n in binario, quindi 
+    // 32 - __builtin_clz(n) e' come un log2 arrotondato in eccesso
     cout << (ans == 0 ? 0 : (32 - __builtin_clz(ans))) << endl;
 }
