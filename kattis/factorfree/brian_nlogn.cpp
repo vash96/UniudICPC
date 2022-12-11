@@ -1,7 +1,7 @@
 /*
 Testo: https://open.kattis.com/problems/factorfree
 Tecnica: Divide and Conquer, Osservazioni
-Complessità: O(N)
+Complessità: O(NlogN)
 
 Idea:
  - La prima cosa da osservare e' che la radice dell'albero deve essere coprima
