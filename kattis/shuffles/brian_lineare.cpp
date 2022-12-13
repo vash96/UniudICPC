@@ -12,7 +12,7 @@ Idea:
    Sketch: dim per induzione su k, considerate quante inversioni al piu' puo' generare una mossa rispetto
             alla precedente. Una mossa deve prima spezzare il mazzo in due parti A_1, A_2. Considerare
             le inversioni che coinvolgono un elemento di A_2 con uno di A_1.
- - Il claim dimostra che se l'array ha 1 <= t <= 2^k inversioni, allora sono necessarie almeno k mosse per ordinarlo
+ - Il claim dimostra che se l'array ha 2^(k-1) < t <= 2^k inversioni, allora sono necessarie almeno k mosse per ordinarlo
  - Bisogna mostrare che sono anche sufficienti
 */
 
